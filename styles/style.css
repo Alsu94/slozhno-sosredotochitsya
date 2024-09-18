@@ -3,3 +3,18 @@
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
 }
+
+
+.header {
+  background-image: url("../images/cover-image/light/cover-image-light.png");
+
+  background-image: image-set(
+    url("../images/cover-image/light/cover-image-light-1x.avif") type("image/avif") 1x,
+    url("../images/cover-image/light/cover-image-light-2x.avif") type("image/avif") 2x,
+    url("../images/cover-image/light/cover-image-light-1x.webp") type("image/webp") 1x,
+    url("../images/cover-image/light/cover-image-light-2x.webp") type("image/webp") 2x,
+    url("../images/cover-image/light/cover-image-light.png") type("image/png") 1x,
+    url("../images/cover-image/light/cover-image-light-2x.png") type("image/png") 2x
+  );
+
+}
