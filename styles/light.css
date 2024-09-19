@@ -32,4 +32,6 @@
     url("../images/cover-image/light/cover-image-light-2x.png") type("image/png") 2x
   );
 
+  background-size: cover;
+
 }

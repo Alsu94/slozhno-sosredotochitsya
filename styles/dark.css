@@ -33,5 +33,7 @@
     url("../images/cover-image/dark/cover-image-dark-2x.png") type("image/png") 2x
   );
 
+  background-size: contain;
+
 }
 

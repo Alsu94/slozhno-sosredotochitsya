@@ -2,11 +2,14 @@
 
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  font-family: var(--main-font);
+  font-size: 18px;
+  color: var(--text-color);
 }
 
 
 .header {
-  background-image: url("../images/cover-image/light/cover-image-light.png");
+  /* background-image: url("../images/cover-image/light/cover-image-light.png");
 
   background-image: image-set(
     url("../images/cover-image/light/cover-image-light-1x.avif") type("image/avif") 1x,
@@ -15,6 +18,89 @@
     url("../images/cover-image/light/cover-image-light-2x.webp") type("image/webp") 2x,
     url("../images/cover-image/light/cover-image-light.png") type("image/png") 1x,
     url("../images/cover-image/light/cover-image-light-2x.png") type("image/png") 2x
-  );
+  ); */
 
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  /* grid-template-columns: repeat(2, 1fr); */
+  align-content: space-between;
+  padding: 20px;
+  height: 100vh;
+}
+
+.header::before {
+  justify-self: end;
+  align-self: start;
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
+  display: block;
+  content: "";
+  height: 25px;
+  width: 25px;
+  border-block-start: 1px solid currentColor;
+  border-inline-end: 1px solid currentColor;
+}
+
+.header::after {
+  grid-row: 3 / -1;
+  grid-column: 1 / 2;
+  align-self: end;
+  display: block;
+  content: "";
+  height: 25px;
+  width: 25px;
+  border-block-end: 1px solid currentColor;
+  border-inline-start: 1px solid currentColor;
+}
+
+
+
+.decorated-zone {
+  
+}
+
+.header__theme-menu {
+  /* align-self: center; */
+  /* order: -2; */
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
+  justify-self: center;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  height: 1.5em;
+}
+
+.header__theme-menu-button {
+  background-color: inherit;
+  border: none;
+  text-transform: lowercase;
+  line-height: 1.5em;
+}
+
+.header__theme-menu-button_active {
+  outline: 1px solid var(--text-color);
+  pointer-events: none;
+}
+
+
+.header__title {
+  font-size: clamp(7.25rem, 7.1145rem + 0.6024vw, 7.5rem);
+  font-weight: bold;
+  line-height: 82.5%;
+  color: var(--accent-title-color);
+  text-shadow: 4px 4px 0px var(--accent-color);
+  align-self: center;
+}
+
+.header__text {
+  align-self: center;
+  justify-self: end;
+
+  grid-row: 3 / -1;
+  grid-column: 1 / 2;
+  width: 50%;
+  font-weight: bold;
+  line-height: 23.4px;
 }
