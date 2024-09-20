@@ -8,7 +8,9 @@
   body {
     --bg-color: #FFF1F7;
     --text-color: #353430;
+    --accent-text-color: #353430;
     --accent-color: #FF8DCB; 
+    --section-title-color: #353430;
     --accent-title-color: #FFC2E6;
   }
 }
@@ -18,9 +20,15 @@
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
-}
 
-.header {
+  --bg-color: #FFF1F7;
+  --text-color: #353430;
+  --accent-text-color: #353430;
+  --accent-color: #FF8DCB; 
+  --section-title-color: #353430;
+  --accent-title-color: #FFC2E6;
+
+
   background-image: url("../images/cover-image/light/cover-image-light.png");
 
   background-image: image-set(
@@ -31,7 +39,12 @@
     url("../images/cover-image/light/cover-image-light.png") type("image/png") 1x,
     url("../images/cover-image/light/cover-image-light-2x.png") type("image/png") 2x
   );
+}
 
-  background-size: cover;
+.header {
+  
+}
 
+.theme-light {
+  
 }

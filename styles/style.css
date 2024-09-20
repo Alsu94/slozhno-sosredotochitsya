@@ -1,15 +1,24 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
+/* :root {
+  --bg-color: #FFF1F7;
+  --text-color: #353430;
+  --accent-color: #FF8DCB; 
+  --accent-title-color: #FFC2E6;
+
+  --bg-color: #000028;
+  --text-color: #F1B2CE;
+  --accent-color: #FF0070; 
+  --accent-title-color: #DB00FF;
+} */
+
 
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
   font-family: var(--main-font);
   font-size: 18px;
   color: var(--text-color);
-}
 
-
-.header {
-  /* background-image: url("../images/cover-image/light/cover-image-light.png");
+  background-image: url("../images/cover-image/light/cover-image-light.png");
 
   background-image: image-set(
     url("../images/cover-image/light/cover-image-light-1x.avif") type("image/avif") 1x,
@@ -18,14 +27,38 @@
     url("../images/cover-image/light/cover-image-light-2x.webp") type("image/webp") 2x,
     url("../images/cover-image/light/cover-image-light.png") type("image/png") 1x,
     url("../images/cover-image/light/cover-image-light-2x.png") type("image/png") 2x
-  ); */
+  );
 
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: fixed;
+
+}
+
+@media (prefers-color-scheme: dark) {
+  .page {
+    background-image: url("../images/cover-image/dark/cover-image-dark.png");
+
+    background-image: image-set(
+      url("../images/cover-image/dark/cover-image-dark-1x.avif") type("image/avif") 1x,
+      url("../images/cover-image/dark/cover-image-dark-2x.avif") type("image/avif") 2x,
+      url("../images/cover-image/dark/cover-image-dark-1x.webp") type("image/webp") 1x,
+      url("../images/cover-image/dark/cover-image-dark-2x.webp") type("image/webp") 2x,
+      url("../images/cover-image/dark/cover-image-dark.png") type("image/png") 1x,
+      url("../images/cover-image/dark/cover-image-dark-2x.png") type("image/png") 2x
+    );
+  }
+}
+
+
+.header {
   display: grid;
-  grid-template-rows: repeat(3, 1fr);
-  /* grid-template-columns: repeat(2, 1fr); */
+  grid-template-rows: repeat(6, 1fr);
   align-content: space-between;
   padding: 20px;
   height: 100vh;
+  position: relative;
+  margin-block-end: 60px;
 }
 
 .header::before {
@@ -37,8 +70,8 @@
   content: "";
   height: 25px;
   width: 25px;
-  border-block-start: 1px solid currentColor;
-  border-inline-end: 1px solid currentColor;
+  border-block-start: 1px solid var(--accent-text-color);
+  border-inline-end: 1px solid var(--accent-text-color);
 }
 
 .header::after {
@@ -49,19 +82,11 @@
   content: "";
   height: 25px;
   width: 25px;
-  border-block-end: 1px solid currentColor;
-  border-inline-start: 1px solid currentColor;
-}
-
-
-
-.decorated-zone {
-  
+  border-block-end: 1px solid var(--accent-text-color);
+  border-inline-start: 1px solid var(--accent-text-color);
 }
 
 .header__theme-menu {
-  /* align-self: center; */
-  /* order: -2; */
   grid-row: 1 / 2;
   grid-column: 1 / 2;
   justify-self: center;
@@ -69,38 +94,89 @@
 
 .header__theme-menu-list {
   display: flex;
-  height: 1.5em;
+  column-gap: 10px;
+  height: 1.1em;
 }
 
 .header__theme-menu-button {
   background-color: inherit;
   border: none;
   text-transform: lowercase;
-  line-height: 1.5em;
+  line-height: 1.1em;
+  padding-inline: 13px;
+  color: var(--accent-text-color)
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-bottom: 1px solid var(--accent-text-color);
 }
 
 .header__theme-menu-button_active {
-  outline: 1px solid var(--text-color);
+  border: 1px solid var(--accent-text-color);
   pointer-events: none;
 }
 
 
 .header__title {
-  font-size: clamp(7.25rem, 7.1145rem + 0.6024vw, 7.5rem);
+  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem) ;
   font-weight: bold;
   line-height: 82.5%;
   color: var(--accent-title-color);
   text-shadow: 4px 4px 0px var(--accent-color);
   align-self: center;
+  margin-inline-start: -20px;
+  grid-row: 3 / 5;
+  grid-column: 1 / 2;
 }
 
 .header__text {
-  align-self: center;
+  align-self: end;
   justify-self: end;
-
-  grid-row: 3 / -1;
+  grid-row: 5 / 6;
   grid-column: 1 / 2;
   width: 50%;
   font-weight: bold;
   line-height: 23.4px;
+  background-color: var(--accent-color);
+  color: var(--section-title-color);
 }
+
+.decorated-zone {
+  text-transform: uppercase;
+  position: absolute;
+  top: 20px;
+  right: 29px;
+  line-height: 25px;
+}
+
+.content {
+  padding-inline: 20px;
+}
+
+.section-1 {
+  display: grid;
+  grid-template-columns: .97fr 2fr;
+  column-gap: 20px;
+  line-height: 23.4px;
+  margin-block-end: 80px;
+}
+
+.section__title {
+  font-size: 18px;
+  color: var(--accent-color)
+}
+
+.content__title {
+  background-color: var(--accent-color);
+  color:var(--section-title-color);
+  margin-block-end: 10px;
+}
+
+.section__paragraph:not(:last-child) {
+  margin-block-end: 20px;
+}
+
