@@ -117,6 +117,7 @@
 
 @media (max-width: 375px) {
   .header__title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
     margin-inline-start: 0;
   }
 }
@@ -198,7 +199,7 @@
 
 .section-two-columns {
   display: grid;
-  grid-template-columns: minmax(315px, .97fr) 2fr;
+  grid-template-columns: minmax(min-content, 315px) 2fr;
   column-gap: 20px;
   line-height: 23.4px;
   margin-block-end: 80px;
@@ -206,7 +207,7 @@
 
 @media (max-width: 768px) {
   .section-two-columns {
-    grid-template-columns: minmax(236px, .97fr) 2fr;
+    grid-template-columns: minmax(min-content, 236px) 2fr;
   }
 }
 
@@ -275,13 +276,14 @@
 
   .section__item:not(:last-child) {
     margin-block-end: 20px;
-  } 
+  }
 }
 
 @media (max-width: 375px) {
   .section-three-columns {
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: column; */
+    grid-template-columns: minmax(min-content, 355px);
     margin-block-end: 50px;
   }
 
