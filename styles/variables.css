@@ -5,7 +5,9 @@
 :root {
   --bg-color: #FFF1F7;
   --text-color: #353430;
+  --accent-text-color: #353430;
   --accent-color: #FF8DCB; 
+  --section-title-color: #353430;
   --accent-title-color: #FFC2E6;
   --main-font: 'IBM Plex mono', sans-serif;
 }
