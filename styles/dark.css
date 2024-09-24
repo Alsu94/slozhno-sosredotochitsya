@@ -33,6 +33,12 @@
 
 }
 
+@media (max-width: 375px) {
+  .page.theme_dark {
+    background-image: none;
+  }
+}
+
 .theme_dark .header__theme-menu-button:hover {
   border: 1px solid rgba(255, 0, 112, 0.4);
 }

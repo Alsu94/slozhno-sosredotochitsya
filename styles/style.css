@@ -19,6 +19,12 @@
   }
 }
 
+@media (max-width: 375px) {
+  .page {
+    background-image: none;
+  }
+}
+
 
 .header {
   display: grid;

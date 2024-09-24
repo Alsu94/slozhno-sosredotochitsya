@@ -33,4 +33,10 @@
   background-color: var(--bg-color);
 }
 
+@media (max-width: 375px) {
+  .page.theme_light {
+    background-image: none;
+  }
+}
+
 
