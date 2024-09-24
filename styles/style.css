@@ -38,6 +38,7 @@
 
 @media (max-width: 375px) {
   .header {
+    grid-template-rows: repeat(9, 1fr);
     padding: 10px;
     margin-block-end: 40px;
   }
@@ -79,6 +80,27 @@
   display: flex;
   column-gap: 10px;
   height: 1.1em;
+}
+
+@media (max-width: 768px) {
+  .header__theme-menu-list {
+    flex-direction: column;
+    row-gap: 10px;
+  }
+
+  .header__theme-menu {
+    grid-row: 2 / 3;
+    justify-self: end;
+    align-self: start;
+  }
+}
+
+@media (max-width: 375px) {
+  .header__theme-menu {
+    grid-row: 1 / 3;
+    justify-self: end;
+    align-self: center;
+  }
 }
 
 .header__theme-menu-button {
@@ -123,7 +145,8 @@
 
 @media (max-width: 375px) {
   .header__title {
-    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    grid-row: 4 / 7;
+    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
     margin-inline-start: 0;
   }
 }
@@ -144,8 +167,9 @@
 @media (max-width: 375px) {
   .header__text {
     width: 100%;
-    grid-row: 5 / -1;
+    grid-row: 7 / -1;
     align-self: center;
+    justify-self: center;
   }
 }
 
@@ -153,26 +177,7 @@
   display: none;
 }
 
-@media (max-width: 768px) {
-  .header__theme-menu-list {
-    flex-direction: column;
-    row-gap: 10px;
-  }
 
-  .header__theme-menu {
-    grid-row: 2 / 3;
-    justify-self: end;
-    align-self: start;
-  }
-}
-
-@media (max-width: 375px) {
-  .header__theme-menu {
-    grid-row: 1 / 3;
-    justify-self: end;
-    align-self: center;
-  }
-}
 
 .content {
   padding-inline: 20px;
@@ -287,16 +292,14 @@
 
 @media (max-width: 375px) {
   .section-three-columns {
-    /* display: flex;
-    flex-direction: column; */
-    grid-template-columns: minmax(min-content, 355px);
+    display: flex;
+    flex-direction: column;
     margin-block-end: 50px;
   }
 
   .section-three-columns .section__title {
     padding-block-end: 0;
   }
-
 }
 
 .accent-text {
@@ -333,6 +336,10 @@
     gap: 10px;
   }
 
+  .section-gallery {
+    margin-block-end: 40px;
+  }
+
 }
 
 .gallery__img {
@@ -366,6 +373,17 @@
   grid-row: 3 / -1;
   grid-column: 2 / -1;
 }
+
+@media (max-width: 375px) {
+  .gallery__item-1, 
+  .gallery__item-2, 
+  .gallery__item-3, 
+  .gallery__item-4, 
+  .gallery__item-5 {
+    display: contents;
+  }
+}
+
 
 .footer {
   display: grid;
@@ -404,4 +422,13 @@
   text-shadow: 4px 4px 0px var(--accent-color);
 }
 
+
+@media (max-width: 375px) {
+  .footer {
+    padding: 10px;
+  }
+  .footer h2 {
+    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  }
+}
 
