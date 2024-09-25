@@ -1,21 +1,3 @@
-/*
-  Специально для тёмной темы при наличии класса,
-  здесь окажутся стили, которые нужно переопределить принудительно,
-  переключая тему
-*/
-
-@media (prefers-color-scheme: dark) {
-  body {
-    --bg-color: #000028;
-    --text-color: #F1B2CE;
-    --accent-text-color: #FF0070;
-    --accent-color: #FF0070;
-    --section-title-color: #000028;
-    --accent-title-color: #DB00FF;
-  }
-}
-
-
 .page.theme_dark {
   /* сохраните этот селектор в приведённом виде.
     Так стили написанные ниже будут иметь больший вес,
@@ -33,29 +15,23 @@
 
 }
 
-@media (max-width: 375px) {
-  .page.theme_dark {
-    background-image: none;
-  }
-}
-
 .theme_dark .header__theme-menu-button:hover {
-  border: 1px solid rgba(255, 0, 112, 0.4);
+  outline: 1px solid rgba(255, 0, 112, 0.4);
 }
 
-.theme_dark  .decorated-zone {
-  color: var(--accent-color);
+.theme_dark .decorated-text {
+  grid-column: 1 / -1;
+  grid-row: 1 / 2;
+  justify-self: end;
+  align-self: start;
   display: flex;
   align-items: center;
   column-gap: 10px;
-  text-transform: uppercase;
-  position: absolute;
-  top: 20px;
-  right: 29px;
-  line-height: 25px;
+  margin-inline-end: 10px;
+  color: var(--accent-text-color);
 }
 
-.theme_dark .decorated-zone::after {
+.theme_dark .decorated-text::after {
   display: block;
   content: "";
   height: 9px;
