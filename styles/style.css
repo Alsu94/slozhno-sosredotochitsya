@@ -276,6 +276,7 @@
 
 .subtitle {
   background-color: var(--accent-color);
+  color: var(--section-title-color);
 }
 
 .section-advices .section__item-title {
